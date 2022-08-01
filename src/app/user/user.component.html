@@ -1,8 +1,23 @@
 
 
-<mat-card>Simple card</mat-card>
-<mat-card>Simple card</mat-card>
-<mat-card>Simple card</mat-card>
+<mat-card class="d_flex mat_card_title">
+
+    <div class="name">Name</div>
+    <div class="adress">Adress</div>
+    <div class="birthday">Age</div>
+    <div class="email">Email</div>
+  
+</mat-card>
+
+<mat-card *ngFor="let user of allUsers" let i = index class="d_flex" [routerLink]="['/user/' + user['customIdName']]">
+
+  <div class="name">{{ user['firstName'] }} {{ user['lastName'] }}</div>
+  <div class="adress">{{ user['street'] }} | {{ user['postCode'] }} {{ user['city'] }}</div>
+  <div class="birthday">{{calculateAge(user['birthDate'])}}</div>
+  <div class="email">{{user['email']}}</div>
+
+</mat-card>
+
 
     <button (click)="openDialog()" class="add_user_button" mat-fab color="primary"  matTooltip="Add user">
       <mat-icon>person_add</mat-icon>

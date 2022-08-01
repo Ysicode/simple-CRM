@@ -4,6 +4,35 @@
     bottom: 50px;
 }
 
+.mat_card_title {
+    background: rgba(0, 0, 0, 0.12);
+    font-weight: 800;
+    box-shadow: 0px 2px 1px -1px #3f51b5, 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
 mat-card {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .name {
+        width: 20%;
+    }
+
+    .adress {
+        width: 40%;
+    }
+
+    .birthday {
+        width: 20%;
+    }
+
+    .email {
+        width: 30%;
+    }
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.12);
+    }
 }

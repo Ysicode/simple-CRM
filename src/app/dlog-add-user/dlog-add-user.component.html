@@ -36,19 +36,24 @@
             </mat-form-field>
         </div>
         <div class="d_flex">
-            <mat-form-field appearance="outline">
+            <mat-form-field  class="formfields_left"  appearance="outline">
                 <mat-label>Select your birthdate</mat-label>
                 <input [disabled]="loading" [(ngModel)]="birthdate" matInput [matDatepicker]="picker">
                 <mat-datepicker-toggle matSuffix [for]="picker">
                     <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                 </mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <mat-datepicker #picker startView="multi-year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="formfields_right" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.email" matInput placeholder="Please enter your email">
             </mat-form-field>
         </div>
 
     </div>
     <div mat-dialog-actions>
-        <button [disabled]="loading" mat-button>Cancel</button>
+        <button [disabled]="loading" mat-button (click)="dialogRef.close()">Cancel</button>
         <button [disabled]="loading" mat-button (click)="save()" cdkFocusInitial>Add user</button>
     </div>
 </div>

@@ -26,6 +26,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 
 
@@ -34,7 +35,8 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DlogAddUserComponent
+    DlogAddUserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

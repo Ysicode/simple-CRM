@@ -12,6 +12,7 @@ export class DlogAddUserComponent implements OnInit {
   user: User = new User();
   birthdate: Date | any;
   loading = false;
+  startDate = new Date(1990, 0, 1);
   constructor( public dialogRef: MatDialogRef<DlogAddUserComponent>,private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ export class DlogAddUserComponent implements OnInit {
     this.user.birthDate = this.birthdate.getTime();
     this.loading = true
     this.firestore.
-      collection('user')
+      collection('users')
       .add(this.user.toJSON())
       .then((result: any) => {
         this.loading = false;
