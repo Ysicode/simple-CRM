@@ -1,0 +1,13 @@
+<h1>Login</h1>
+<form [formGroup]="loginForm">
+    <mat-form-field>
+        <input matInput placeholder="Email adress" formControlName="email">
+        <mat-error *ngIf="email?.errors?.['required']">Email is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password">
+        <mat-error *ngIf="password?.errors?.['required']">Password is required</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Login</button>
+    <span>New to our Platform?  <a routerLink="/signup">SIGN UP</a></span>
+</form>

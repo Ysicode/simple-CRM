@@ -17,6 +17,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     flex-direction: column;
 }
 
+.d_flex_space {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .d_none {
     display: none;
 }

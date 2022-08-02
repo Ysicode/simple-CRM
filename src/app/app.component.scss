@@ -1,9 +1,12 @@
 .mat_drawer_container {
-height: 100vh;
+    height: 100vh;
 }
 
 .menu_icon {
     cursor: pointer;
+    &:hover {
+        color: pink;
+    }
 }
 
 .app_name {
@@ -16,7 +19,7 @@ height: 100vh;
 }
 
 .logo_container {
-    border-bottom: 1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     height: 56px;
     min-height: 56px;
     display: flex;
@@ -30,9 +33,27 @@ height: 100vh;
     margin-top: 0px;
 }
 
-mat-toolbar, mat-toolbar-row {
+mat-toolbar,
+mat-toolbar-row {
     min-height: 56px;
     height: 56px;
+}
+
+.login_link {
+    &:hover {
+        cursor: pointer;
+
+        .menu_icon {
+            color: pink;
+        }
+    }
+}
+
+.login {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    font-size: 17px;
 }
 
 .menu_items {
@@ -48,7 +69,7 @@ mat-toolbar, mat-toolbar-row {
         cursor: pointer;
 
         &:hover {
-            background: rgba(0,0,0,.12);
+            background: rgba(0, 0, 0, 0.12);
         }
     }
 
@@ -58,5 +79,5 @@ mat-toolbar, mat-toolbar-row {
 }
 
 .router_container {
-    padding: 30px
+    padding: 30px;
 }

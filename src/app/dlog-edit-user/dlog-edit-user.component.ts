@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 
@@ -8,17 +9,28 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./dlog-edit-user.component.scss']
 })
 export class DlogEditUserComponent implements OnInit {
+  birthdate: Date | any;
   loading = false;
-  user: User = new User();
+  startDate = new Date(1990, 0, 1);
+  user: User | any;
+  userId: string | any;
 
-  constructor(public dialogRef: MatDialogRef<DlogEditUserComponent>) { 
+  constructor(public dialogRef: MatDialogRef<DlogEditUserComponent>, private firestore: AngularFirestore) {
   }
 
   ngOnInit(): void {
   }
 
   saveUser() {
-
+    this.loading = true;
+    this.firestore
+      .collection('users')
+      .doc(this.userId)
+      .update(this.user.toJSON())
+      .then(() => {
+        this.loading = false;
+        this.dialogRef.close();
+      })
   }
 
 }

@@ -18,7 +18,6 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
       this.userId = paramMap.get('id');
-      console.log(this.userId)
       this.getUser();
     })
   }
@@ -37,7 +36,8 @@ export class UserDetailComponent implements OnInit {
  
     openDialog() {
       const dialog = this.dialog.open(DlogEditUserComponent);
-      dialog.componentInstance.user = this.user;
+      dialog.componentInstance.user = new User(this.user.toJSON());
+      dialog.componentInstance.userId = this.userId;
   }
 
   calculateAge(birthday: any) {

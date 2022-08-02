@@ -9,7 +9,7 @@ export class User {
     public email: string;
 
     constructor(obj?: any) {
-        this.firstName = obj ? obj.firstname: '';
+        this.firstName = obj ? obj.firstName: '';
         this.lastName = obj ? obj.lastName: '';
         this.street = obj ? obj.street: '';
         this.postCode = obj ? obj.postCode: '';

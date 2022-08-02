@@ -1,21 +1,59 @@
 <div class="dialog_container">
     <mat-spinner *ngIf="loading"></mat-spinner>
 
-    <h1 mat-dialog-title>Edit User</h1>
+    <h1 mat-dialog-title>Edit user</h1>
     <div mat-dialog-content class="d_flex_column">
         <div class="d_flex">
             <mat-form-field class="formfields_left" appearance="outline">
                 <mat-label>Firstname</mat-label>
-                <input [disabled]="loading" [(ngModel)]="user['firstName']" matInput placeholder="Please enter your firstname">
+                <input [disabled]="loading" [(ngModel)]="user.firstName" matInput placeholder="Please enter your firstname">
             </mat-form-field>
             <mat-form-field class="formfields_right" appearance="outline">
                 <mat-label>Lastname</mat-label>
-                <input [disabled]="loading" [(ngModel)]="user['lastName']" matInput placeholder="Please enter your lastname">
+                <input [disabled]="loading" [(ngModel)]="user.lastName" matInput placeholder="Please enter your lastname">
             </mat-form-field>
 
         </div>
+
+        <div class="d_flex">
+            <mat-form-field class="formfields_left" appearance="outline">
+                <mat-label>Street & House No.</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.street" matInput placeholder="Please enter your street">
+            </mat-form-field>
+            <mat-form-field class="formfields_right" appearance="outline">
+                <mat-label>Postcode</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.postCode" matInput placeholder="Please enter your postcode">
+            </mat-form-field>
+        </div>
+        <div class="d_flex">
+            <mat-form-field class="formfields_left" appearance="outline">
+                <mat-label>City</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.city" matInput placeholder="Please enter your city">
+            </mat-form-field>
+            <mat-form-field class="formfields_right" appearance="outline">
+                <mat-label>Country</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.country" matInput placeholder="Please enter your country">
+            </mat-form-field>
+        </div>
+        <div class="d_flex">
+            <mat-form-field  class="formfields_left"  appearance="outline">
+                <mat-label>Select your birthdate</mat-label>
+                <input [disabled]="loading" [(ngModel)]="birthdate" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker startView="multi-year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="formfields_right" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.email" matInput placeholder="Please enter your email">
+            </mat-form-field>
+        </div>
+
+    </div>
     <div mat-dialog-actions>
         <button [disabled]="loading" mat-button (click)="dialogRef.close()">Cancel</button>
-        <button [disabled]="loading" mat-button (click)="saveUser()" cdkFocusInitial>Save edit</button>
+        <button [disabled]="loading" mat-button (click)="saveUser()" cdkFocusInitial>Edit user</button>
     </div>
 </div>

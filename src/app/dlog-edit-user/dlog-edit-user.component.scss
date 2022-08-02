@@ -1,0 +1,27 @@
+.dialog_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+
+    mat-spinner {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+.formfields_left {
+    margin-right: 8px;
+}
+
+.formfields_right {
+    margin-left: 8px;
+}
+
+mat-form-field {
+    width: 200px;
+}

@@ -2,6 +2,11 @@
     position: absolute;
     right: 50px;
     bottom: 50px;
+    &:hover {
+        mat-icon {
+            color: pink;
+        }
+    }
 }
 
 .mat_card_title {
@@ -34,5 +39,6 @@ mat-card {
 
     &:hover {
         background: rgba(0, 0, 0, 0.12);
+        cursor: pointer;
     }
 }
