@@ -1,0 +1,21 @@
+<div class="dialog_container">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+
+    <h1 mat-dialog-title>Edit User</h1>
+    <div mat-dialog-content class="d_flex_column">
+        <div class="d_flex">
+            <mat-form-field class="formfields_left" appearance="outline">
+                <mat-label>Firstname</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user['firstName']" matInput placeholder="Please enter your firstname">
+            </mat-form-field>
+            <mat-form-field class="formfields_right" appearance="outline">
+                <mat-label>Lastname</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user['lastName']" matInput placeholder="Please enter your lastname">
+            </mat-form-field>
+
+        </div>
+    <div mat-dialog-actions>
+        <button [disabled]="loading" mat-button (click)="dialogRef.close()">Cancel</button>
+        <button [disabled]="loading" mat-button (click)="saveUser()" cdkFocusInitial>Save edit</button>
+    </div>
+</div>

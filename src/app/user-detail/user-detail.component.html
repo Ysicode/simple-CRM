@@ -1,13 +1,42 @@
-
-<div>
-{{userId}}
-{{user.firstName}}
-{{user.lastName}}
-{{user.city}}
-{{user.birthDate}}
-{{user.email}}
-{{user.street}}
-{{user.postCode}}
-{{user.country}}
-
+<div class="profile_head">
+    <h1>{{user['firstName']}} {{user['lastName']}}</h1>
+    <img src="assets/img/Simon Weiss.jpg" alt="">
+    <button [matMenuTriggerFor]="menu" class="edit_btn" mat-mini-fab color="primary">
+        <mat-icon>edit</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button (click)="openDialog()" mat-menu-item>Edit User</button>
+        <button mat-menu-item>Delete User</button>
+      </mat-menu>
 </div>
+<mat-card class="d_flex_column">
+    <h2>Adress</h2>
+    <div class="card_items">
+        <p class="card_item">Street: {{user.street}}</p>
+        <p class="card_item">Postcode: {{user.postCode}}</p>
+        <p class="card_item">City: {{user.city}}</p>
+        <p class="card_item">Country: {{user.country}}</p>
+    </div>
+</mat-card>
+
+<mat-card class="d_flex_column">
+    <h2>Email</h2>
+    <div class="card_items">
+        <p class="card_item">Email: {{user.email}}</p>
+    </div>
+</mat-card>
+
+<mat-card class="d_flex_column">
+    <h2>Dates</h2>
+    <div class="card_items">
+        <p class="card_item">Birthday: {{user.birthDate}}</p>
+        <p class="card_item">Age: {{calculateAge(user.birthDate)}}</p>
+    </div>
+</mat-card>
+
+<mat-card class="d_flex_column">
+    <h2>User Id</h2>
+    <div class="card_items">
+        <p class="card_item">User Id: {{userId}}</p>
+    </div>
+</mat-card>

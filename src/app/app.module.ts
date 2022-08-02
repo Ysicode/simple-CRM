@@ -27,6 +27,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { DlogEditUserComponent } from './dlog-edit-user/dlog-edit-user.component';
 
 
 
@@ -36,7 +38,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     DashboardComponent,
     UserComponent,
     DlogAddUserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DlogEditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatMenuModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

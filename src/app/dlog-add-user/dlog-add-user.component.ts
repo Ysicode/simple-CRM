@@ -9,7 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./dlog-add-user.component.scss']
 })
 export class DlogAddUserComponent implements OnInit {
-  user: User = new User();
+  user = new User();
   birthdate: Date | any;
   loading = false;
   startDate = new Date(1990, 0, 1);

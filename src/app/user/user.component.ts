@@ -39,7 +39,4 @@ export class UserComponent implements OnInit {
   }
 
 }
-function idField(idField: any, arg1: string) {
-  throw new Error('Function not implemented.');
-}
 
