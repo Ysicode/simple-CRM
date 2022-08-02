@@ -1,14 +1,16 @@
 
-
 <mat-drawer-container class="mat_drawer_container" autosize>
   <mat-drawer #drawer class="sidenav" [opened]="true" mode="side">
     <div class="logo_container">
       <p class="logo">eins2 CRM</p>
     </div>
-
     <ul class="menu_items">
-      <li routerLink="/"><mat-icon class="link_icon">dashboard</mat-icon>Dashboard</li>
-      <li routerLink="/user"> <mat-icon class="link_icon">person</mat-icon>User</li>
+      <li routerLink="/">
+        <mat-icon class="link_icon">dashboard</mat-icon>Dashboard
+      </li>
+      <li routerLink="/user">
+        <mat-icon class="link_icon">person</mat-icon>User
+      </li>
     </ul>
   </mat-drawer>
 
@@ -16,20 +18,18 @@
     <mat-toolbar color="primary">
       <mat-toolbar-row class="d_flex_space">
         <div class="d_flex">
-          <mat-icon class="menu_icon" (click)="drawer.toggle()" >menu</mat-icon>     
+          <mat-icon class="menu_icon" (click)="drawer.toggle()">menu</mat-icon>
           <span class="app_name">Simple CRM</span>
         </div>
-       <div routerLink="/login" class="d_flex login_link">
-        <p class="login">Login</p>
-        <mat-icon class="menu_icon" >login</mat-icon>  
-       </div>       
+        <div routerLink="/login" class="d_flex login_link">
+          <p class="login">Logout</p>
+          <mat-icon class="menu_icon">logout</mat-icon>
+        </div>
       </mat-toolbar-row>
-    </mat-toolbar> 
+    </mat-toolbar>
   </div>
 
   <div class="router_container">
-    <router-outlet></router-outlet>
+    <router-outlet ></router-outlet>
   </div>
- 
-
 </mat-drawer-container>

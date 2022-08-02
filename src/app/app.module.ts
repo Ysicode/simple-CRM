@@ -29,8 +29,9 @@ import { MatCardModule } from '@angular/material/card';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { DlogEditUserComponent } from './dlog-edit-user/dlog-edit-user.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { StartpageComponent } from './startpage/startpage.component';
 
 
 
@@ -43,7 +44,7 @@ import { SignupComponent } from './signup/signup.component';
     UserDetailComponent,
     DlogEditUserComponent,
     LoginComponent,
-    SignupComponent
+    StartpageComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +69,8 @@ import { SignupComponent } from './signup/signup.component';
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    HotToastModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
