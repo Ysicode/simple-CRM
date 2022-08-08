@@ -23,27 +23,36 @@ export class UserDetailComponent implements OnInit {
   }
 
   getUser() {
-    this.firestore
-      .collection('users')
-      .doc(this.userId)
-      .valueChanges()
-      .subscribe((user) => {
-        this.user = new User(user);
-        console.log('this is the user', this.userId)
-      })
-      console.log('Hello', this.user.firstName)
+    if (this.userId) {
+      this.firestore
+        .collection('users')
+        .doc(this.userId)
+        .valueChanges()
+        .subscribe((user) => {
+          this.user = new User(user);
+        })
+    }
   }
- 
-    openDialog() {
-      const dialog = this.dialog.open(DlogEditUserComponent);
-      dialog.componentInstance.user = new User(this.user.toJSON());
-      dialog.componentInstance.userId = this.userId;
+
+  openDialog() {
+    const dialog = this.dialog.open(DlogEditUserComponent);
+    dialog.componentInstance.user = new User(this.user.toJSON());
+    dialog.componentInstance.userId = this.userId;
   }
 
   calculateAge(birthday: any) {
     let timeDiffer = Date.now() - birthday;
     let ageDate = new Date(timeDiffer);
     return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+
+  getBirthdate(birthday: any) {
+    let date = new Date(birthday);
+    let yyyy = date.getFullYear();
+    let mm = date.getMonth() + 1; // Months start at 0!
+    let dd = date.getDate();
+      
+    return dd + '/' + mm + '/' + yyyy;
   }
 
 }

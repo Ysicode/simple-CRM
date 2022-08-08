@@ -2,20 +2,17 @@
 
 <mat-card class="d_flex mat_card_title">
 
-    <div class="name">Name</div>
+    <div class="name">Name & Email</div>
     <div class="adress">Adress</div>
-    <div class="birthday">Age</div>
-    <div class="email">Email</div> 
   
 </mat-card>
 
 <mat-card *ngFor="let user of allUsers" let i = index class="d_flex" [routerLink]="['/user/' + user['customIdName']]">
-
-  <div class="name">{{ user['firstName'] }} {{ user['lastName'] }}</div>
-  <div class="adress">{{ user['street'] }} | {{ user['postCode'] }} {{ user['city'] }}</div>
-  <div class="birthday">{{calculateAge(user['birthDate'])}}</div>
+<div class="name">
+  <div >{{ user['firstName'] }} {{ user['lastName'] }}</div>
   <div class="email">{{user['email']}}</div>
-
+</div>
+  <div class="adress">{{ user['street'] }} | {{ user['postCode'] }} {{ user['city'] }}</div>
 </mat-card>
 
 

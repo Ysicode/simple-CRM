@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'start', component: StartpageComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'user', component: UserComponent },
-  { path: 'user/:id', component: UserDetailComponent },
+  { path: 'user/:id', component: UserDetailComponent  },
   { path: 'login', component: LoginComponent },
 ];
 

@@ -1,6 +1,6 @@
 <div class="profile_head">
     <h1>{{ user.firstName }} {{user.lastName}}</h1>
-    <img src="assets/img/Simon Weiss.jpg" alt="">
+    <img src="assets/img/avatar.png" alt="">
     <button [matMenuTriggerFor]="menu" class="edit_btn" mat-mini-fab color="primary">
         <mat-icon>edit</mat-icon>
     </button>
@@ -29,7 +29,7 @@
 <mat-card class="d_flex_column">
     <h2>Dates</h2>
     <div class="card_items">
-        <p class="card_item">Birthday: {{user.birthDate}}</p>
+        <p class="card_item">Birthday: {{getBirthdate(user.birthDate)}}</p>
         <p class="card_item">Age: {{calculateAge(user.birthDate)}}</p>
     </div>
 </mat-card>
