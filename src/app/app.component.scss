@@ -1,3 +1,7 @@
+mat-toolbar, mat-primary {
+   background: #ffc201 !important;
+}
+
 .mat_drawer_container {
     height: 100vh;
 }
@@ -5,7 +9,7 @@
 .menu_icon {
     cursor: pointer;
     &:hover {
-        color: pink;
+        color: #3f51b5;
     }
 }
 
@@ -44,7 +48,7 @@ mat-toolbar-row {
         cursor: pointer;
 
         .menu_icon {
-            color: pink;
+            color: #3f51b5;
         }
     }
 }
